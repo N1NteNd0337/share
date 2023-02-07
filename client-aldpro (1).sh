@@ -51,7 +51,7 @@ echo -n "Введите mask (Пример: 255.255.255.0): "
 read MASK
 echo -n "Введите gateway: "
 read GATEWAY
-echo -n "Введите ipv4 DC aldpro: "
+echo -n "Введите ipv4 DC aldpro (Пример: 8.8.8.8): "
 read NAMESERVERS
 echo -n "Введите search-name (Пример: ald.test): "
 read SEARCH
@@ -92,7 +92,6 @@ EOL
 cat <<EOL > /etc/resolv.conf
 search $SEARCH
 nameserver $NAMESERVERS
-nameserver 8.8.8.8 
 EOL
 
 systemctl restart networking
